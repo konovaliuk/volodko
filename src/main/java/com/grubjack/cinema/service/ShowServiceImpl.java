@@ -1,7 +1,7 @@
 package com.grubjack.cinema.service;
 
-import com.grubjack.cinema.dao.ShowDao;
-import com.grubjack.cinema.dao.TicketDao;
+import com.grubjack.cinema.dao.interfcs.IShowDao;
+import com.grubjack.cinema.dao.interfcs.ITicketDao;
 import com.grubjack.cinema.exception.DaoException;
 import com.grubjack.cinema.model.DayOfWeek;
 import com.grubjack.cinema.model.Show;
@@ -21,10 +21,10 @@ import static java.util.stream.Collectors.toMap;
 public class ShowServiceImpl implements ShowService {
 
     private static Logger log = LoggerFactory.getLogger(ShowServiceImpl.class);
-    private ShowDao showDao;
-    private TicketDao ticketDao;
+    private IShowDao showDao;
+    private ITicketDao ticketDao;
 
-    public ShowServiceImpl(ShowDao showDao, TicketDao ticketDao) {
+    public ShowServiceImpl(IShowDao showDao, ITicketDao ticketDao) {
         this.showDao = showDao;
         this.ticketDao = ticketDao;
     }

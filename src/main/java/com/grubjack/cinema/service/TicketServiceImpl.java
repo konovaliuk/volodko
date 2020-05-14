@@ -1,7 +1,7 @@
 package com.grubjack.cinema.service;
 
-import com.grubjack.cinema.dao.ShowDao;
-import com.grubjack.cinema.dao.TicketDao;
+import com.grubjack.cinema.dao.interfcs.IShowDao;
+import com.grubjack.cinema.dao.interfcs.ITicketDao;
 import com.grubjack.cinema.exception.DaoException;
 import com.grubjack.cinema.model.Show;
 import com.grubjack.cinema.model.Ticket;
@@ -20,10 +20,10 @@ import static java.util.stream.Collectors.toMap;
 public class TicketServiceImpl implements TicketService {
 
     private static Logger log = LoggerFactory.getLogger(TicketServiceImpl.class);
-    private TicketDao ticketDao;
-    private ShowDao showDao;
+    private ITicketDao ticketDao;
+    private IShowDao showDao;
 
-    public TicketServiceImpl(TicketDao ticketDao, ShowDao showDao) {
+    public TicketServiceImpl(ITicketDao ticketDao, IShowDao showDao) {
         this.ticketDao = ticketDao;
         this.showDao = showDao;
     }

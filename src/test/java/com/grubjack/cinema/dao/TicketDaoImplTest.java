@@ -1,8 +1,10 @@
 package com.grubjack.cinema.dao;
 
 import com.grubjack.cinema.DBHelper;
-import com.grubjack.cinema.dao.impl.ShowDaoImpl;
-import com.grubjack.cinema.dao.impl.TicketDaoImpl;
+import com.grubjack.cinema.dao.interfcs.IShowDao;
+import com.grubjack.cinema.dao.interfcs.ITicketDao;
+import com.grubjack.cinema.dao.springdata.ShowDaoImpl;
+import com.grubjack.cinema.dao.springdata.TicketDaoImpl;
 import com.grubjack.cinema.exception.DaoException;
 import com.grubjack.cinema.model.DayOfWeek;
 import com.grubjack.cinema.model.Show;
@@ -17,8 +19,8 @@ import java.util.Arrays;
 
 public class TicketDaoImplTest {
 
-    private ShowDao showDao = new ShowDaoImpl(DBHelper.getDataSource());
-    private TicketDao ticketDao = new TicketDaoImpl(DBHelper.getDataSource());
+    private IShowDao showDao = new ShowDaoImpl(DBHelper.getDataSource());
+    private ITicketDao ticketDao = new TicketDaoImpl(DBHelper.getDataSource());
 
     @Before
     public void setUp() {

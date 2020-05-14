@@ -1,8 +1,8 @@
 package com.grubjack.cinema.dao;
 
 import com.grubjack.cinema.DBHelper;
-import com.grubjack.cinema.dao.UserDao;
-import com.grubjack.cinema.dao.impl.UserDaoImpl;
+import com.grubjack.cinema.dao.interfcs.IUserDao;
+import com.grubjack.cinema.dao.springdata.UserDaoImpl;
 import com.grubjack.cinema.exception.DaoException;
 import com.grubjack.cinema.model.Role;
 import com.grubjack.cinema.model.User;
@@ -14,7 +14,7 @@ import org.junit.rules.ExpectedException;
 
 public class UserDaoImplTest {
 
-    private UserDao userDao = new UserDaoImpl(DBHelper.getDataSource());
+    private IUserDao userDao = new UserDaoImpl(DBHelper.getDataSource());
     private User testUser = new User("Test", "User", "test@i.ua", "Tt12345");
 
     @Before

@@ -1,6 +1,6 @@
 package com.grubjack.cinema.service;
 
-import com.grubjack.cinema.dao.UserDao;
+import com.grubjack.cinema.dao.interfcs.IUserDao;
 import com.grubjack.cinema.exception.DaoException;
 import com.grubjack.cinema.model.User;
 import com.grubjack.cinema.util.DigestMD5Helper;
@@ -10,14 +10,11 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 
-/**
- * {@code UserServiceImpl} implementation of interface {@code UserService} with login for entity {@code User}
- */
 public class UserServiceImpl implements UserService {
     private static Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
-    private UserDao userDao;
+    private IUserDao userDao;
 
-    public UserServiceImpl(UserDao userDao) {
+    public UserServiceImpl(IUserDao userDao) {
         this.userDao = userDao;
     }
 
